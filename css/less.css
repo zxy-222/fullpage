@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.section {
+  overflow: hidden;
+  /*第二屏*/
+  /*第三屏*/
+  /*第四屏*/
+}
+.section.first {
+  padding-top: 80px;
+}
+.section.first .logo {
+  background: url(../images/logo.png);
+  height: 186px;
+  width: 251px;
+  margin: 0 auto;
+}
+.section.first .text {
+  width: 100%;
+  text-align: center;
+  margin-top: 80px;
+}
+.section.first .text img {
+  margin: 0 40px;
+  opacity: 0.2;
+  transition: margin 1s,opacity 1s;
+}
+.section.first .intro {
+  background: url(../images/info_1.png);
+  height: 49px;
+  width: 772px;
+  margin: 40px auto;
+}
+.section.first.current .text > img {
+  margin: 0 5px;
+  opacity: 1;
+}
+.section.second > div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.section.second .shield {
+  width: 440px;
+  font-size: 0;
+}
+.section.second .shield img {
+  transition: transform 1s;
+}
+.section.second .shield img:nth-of-type(1) {
+  transform: translate(100px, 100px) rotate(30deg);
+}
+.section.second .shield img:nth-of-type(2) {
+  transform: translate(-100px, -100px) rotate(-30deg);
+}
+.section.second .shield img:nth-of-type(3) {
+  transform: translate(200px, 200px) rotate(60deg);
+}
+.section.second .shield img:nth-of-type(4) {
+  transform: translate(-200px, -200px) rotate(-60deg);
+}
+.section.second .shield img:nth-of-type(5) {
+  transform: translate(150px, 150px) rotate(90deg);
+}
+.section.second .shield img:nth-of-type(6) {
+  transform: translate(50px, 150px) rotate(-90deg);
+}
+.section.second .shield img:nth-of-type(7) {
+  transform: translate(-150px, -150px) rotate(60deg);
+}
+.section.second .shield img:nth-of-type(8) {
+  transform: translate(10px, -150px) rotate(-90deg);
+}
+.section.second .shield img:nth-of-type(9) {
+  transform: translate(-250px, 10px) rotate(45deg);
+}
+.section.second .info {
+  height: 309px;
+  width: 635px;
+  background: url(../images/info_2.png);
+}
+.section.second.current .shield img {
+  transform: none;
+}
+.section.third {
+  position: relative;
+}
+.section.third .info {
+  height: 278px;
+  width: 631px;
+  background: url(../images/info_3.png);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-100%, -50%);
+}
+.section.third .circle {
+  height: 449px;
+  width: 453px;
+  background: url(../images/circle.png);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(120%, -50%);
+}
+.section.third .circle .rocket {
+  height: 204px;
+  width: 203px;
+  background: url(../images/rocket.png);
+  position: absolute;
+  left: -600px;
+  top: 650px;
+  transition: left 1s,top 1s;
+}
+.section.third.current .circle .rocket {
+  left: 125px;
+  top: 125px;
+}
+.section.fourth {
+  position: relative;
+}
+.section.fourth .search {
+  width: 529px;
+  height: 438px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-115%, -50%);
+  overflow: hidden;
+}
+.section.fourth .search .searchBar {
+  width: 529px;
+  height: 66px;
+  background: url(../images/search.png);
+  transform: translateX(-100%);
+}
+.section.fourth .search .searchText {
+  width: 0;
+  height: 22px;
+  background: url(../images/key.png);
+  position: absolute;
+  left: 15px;
+  top: 20px;
+}
+.section.fourth .search .searchResult {
+  width: 529px;
+  height: 0;
+  background: url(../images/result.png);
+  margin-top: -12px;
+}
+.section.fourth .info {
+  width: 612px;
+  height: 299px;
+  background: url(../images/info_4.png);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(50%, -50%);
+}
+.section.fourth.current .search .searchBar {
+  transform: translateX(0%);
+  transition: transform 1s;
+}
+.section.fourth.current .search .searchText {
+  width: 99px;
+  transition: width 1s 1s steps(5);
+}
+.section.fourth.current .search .searchResult {
+  height: 372px;
+  transition: height 1s 2s;
+}

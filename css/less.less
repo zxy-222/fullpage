@@ -1,0 +1,183 @@
+*{margin: 0;
+  padding: 0;
+}
+.position(@left,@top){
+  position: absolute;
+  left:@left;
+  top: @top;
+}
+.section{
+  overflow: hidden;
+  &.first{
+    padding-top: 80px;
+    .logo {
+      background:url(../images/logo.png);
+      height: 186px;
+      width: 251px;
+      margin: 0 auto;
+    }
+    .text {
+      width: 100%;
+      text-align: center;
+      margin-top: 80px;
+      img {
+        margin: 0 40px;
+        opacity: 0.2;
+        transition: margin 1s,opacity 1s;
+      }
+    }
+    .intro {
+      background: url(../images/info_1.png);
+      height: 49px;
+      width: 772px;
+      margin: 40px auto;
+    }
+    &.current {
+      .text {
+        > img {
+          margin :0 5px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  /*第二屏*/
+  &.second {
+    >div {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }  
+    .shield {
+        width: 440px;
+        font-size: 0;
+        img {
+          transition: transform 1s;
+          &:nth-of-type(1){
+            transform: translate(100px,100px) rotate(30deg)
+          }
+          &:nth-of-type(2){
+            transform: translate(-100px,-100px) rotate(-30deg)
+          }
+          &:nth-of-type(3){
+            transform: translate(200px,200px) rotate(60deg)
+          }
+          &:nth-of-type(4){
+            transform: translate(-200px,-200px) rotate(-60deg)
+          }
+          &:nth-of-type(5){
+            transform: translate(150px,150px) rotate(90deg)
+          }
+          &:nth-of-type(6){
+            transform: translate(50px,150px) rotate(-90deg)
+          } 
+          &:nth-of-type(7){
+            transform: translate(-150px,-150px) rotate(60deg)
+          } 
+          &:nth-of-type(8){
+            transform: translate(10px,-150px) rotate(-90deg)
+          } 
+          &:nth-of-type(9){
+            transform: translate(-250px,10px) rotate(45deg)
+          }      
+        }
+    }
+    .info{
+      height: 309px;
+      width: 635px;
+      background: url(../images/info_2.png)
+    }
+    &.current{
+      .shield{
+        img {
+          transform: none;
+        }
+      }
+    }  
+  }
+  /*第三屏*/
+  &.third{
+    position: relative;
+    .info {
+      height: 278px;
+      width: 631px;
+      background: url(../images/info_3.png);
+      .position(50%,50%);
+      transform: translate(-100%,-50%)
+    }
+    .circle{
+      height: 449px;
+      width: 453px;
+      background: url(../images/info_4.png);
+      .position(50%,50%);
+      transform: translate(120%,-50%);
+      .rocket {
+        height: 204px;
+        width: 203px;
+        background: url(../images/rocket.png);
+        .position(-600px,650px);
+        transition:left 1s,top 1s;
+      }
+    }
+    &.current{
+      .circle{
+        .rocket{
+          left: 125px;
+          top:125px;
+        }
+      }
+    }
+  }
+  /*第四屏*/
+  &.fourth{
+    position: relative;
+    .search {
+      width: 529px;
+      height: 438px;
+      .position(50%,50%);
+      transform: translate(-115%,-50%);
+      overflow: hidden;
+      .searchBar{
+        width: 529px;
+        height: 66px;
+        background:url(../images/search.png);
+        transform:translateX(-100%);
+      }
+      .searchText {
+        width: 0;
+        height: 22px;
+        background: url(../images/key.png);
+        .position(15px,20px);
+      }
+      .searchResult{
+        width: 529px;
+        height: 0;
+        background: url(../images/result.png);
+        margin-top: -12px;
+      }
+    }
+    .info{
+      width: 612px;
+      height: 299px;
+      background:url(../images/info_4.png);
+      .position(50%,50%);
+      transform: translate(100%,-50%)
+    }
+    &.current {
+      .search{
+        .searchBar{
+          transform: translateX(0%);
+          transition: transform 1s;
+        }
+        .searchText{
+          width: 99px;
+          transition: width 1s 1s steps(5)
+        }
+        .searchResult{
+          height: 372px;
+          transition: height 1s 2s;
+        }
+      }
+    }
+  }
+}
